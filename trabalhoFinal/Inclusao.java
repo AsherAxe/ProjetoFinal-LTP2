@@ -10,7 +10,7 @@ public class Inclusao {
 		
 		public char 	ativo;
 		public String	codCliente;
-		public int		anoPrimeiraCompra;
+		public int	anoPrimeiraCompra;
 		public float 	vlrCompra;
 		public char 	emDia;
 		
@@ -20,9 +20,9 @@ public class Inclusao {
 	
 	public static void main(String[] args) {
 		
-		Cliente a 			= new Cliente();
+		Cliente a 		= new Cliente();
 		RandomAccessFile	arquivo;
-		Scanner ler			= new Scanner(System.in);
+		Scanner ler		= new Scanner(System.in);
 		
 		String 		clienteChave;
 		int 		verificaChave;
@@ -55,7 +55,7 @@ public class Inclusao {
 						
 						if (verificaChave < 0) {
 						
-							System.out.println("Código de Cliente não pode ser negativo");
+							System.out.println("CÃ³digo de Cliente nÃ£o pode ser negativo");
 							
 							validaChave = false;
 							
@@ -63,7 +63,7 @@ public class Inclusao {
 					
 					} catch (NumberFormatException e) {
 						
-						System.out.println("Código Inválido ! Apenas números inteiros !");
+						System.out.println("CÃ³digo InvÃ¡lido ! Apenas nÃºmeros inteiros !");
 						
 						validaChave = false;
 						
@@ -88,15 +88,15 @@ public class Inclusao {
 					while (true) {
 						
 						a.ativo 			= arquivo.readChar();
-						a.codCliente 		= arquivo.readUTF();
-						a.nomeCliente 		= arquivo.readUTF();
-						a.anoPrimeiraCompra = arquivo.readInt();
-						a.vlrCompra 		= arquivo.readFloat();
+						a.codCliente 			= arquivo.readUTF();
+						a.nomeCliente 			= arquivo.readUTF();
+						a.anoPrimeiraCompra 		= arquivo.readInt();
+						a.vlrCompra 			= arquivo.readFloat();
 						a.emDia 			= arquivo.readChar();
 						
 						if (clienteChave.equals(a.codCliente) && a.ativo == 'S') {
 							
-							System.out.println("Código de Cliente ja cadastrado. Digite novamente \n");
+							System.out.println("CÃ³digo de Cliente ja cadastrado. Digite novamente \n");
 							encontrou = true;
 							break;
 							
@@ -136,7 +136,7 @@ public class Inclusao {
 				
 				if (a.nomeCliente.length() < 10) {
 					
-					System.out.println("Nome Inválido! Mínimo de 10 caracteres !");
+					System.out.println("Nome InvÃ¡lido! MÃ­nimo de 10 caracteres !");
 				}
 			
 			}while (a.nomeCliente.length() < 10);
@@ -162,7 +162,7 @@ public class Inclusao {
 			
 			if (a.vlrCompra < 0) {
 				
-				System.out.println("O valor da primeira compra não pode ser negativo !");
+				System.out.println("O valor da primeira compra nÃ£o pode ser negativo !");
 				System.out.println("Digite novamente! \n");
 				
 			}
@@ -174,7 +174,7 @@ public class Inclusao {
 			
 			do {
 				
-				System.out.println("\nConfirma a gravação dos dados (S/N) ? ");
+				System.out.println("\nConfirma a gravaÃ§Ã£o dos dados (S/N) ? ");
 				confirmacao = ler.next().charAt(0);
 				
 				if (confirmacao == 'S') {
@@ -195,7 +195,7 @@ public class Inclusao {
 						
 					} catch (IOException e) {
 						
-						System.out.println("Erro na gravaçao do registro - programa será finalizado");
+						System.out.println("Erro na gravaÃ§ao do registro - programa serÃ¡ finalizado");
 						System.exit(0);
 						
 					}
