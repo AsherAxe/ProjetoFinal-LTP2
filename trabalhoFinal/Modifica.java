@@ -246,7 +246,7 @@ public class Modifica {
 			
 		} while (!a.codCliente.equals("FIM"));
 
-		ler.nextLine();
+		ler.close();
 	}
 
 }
