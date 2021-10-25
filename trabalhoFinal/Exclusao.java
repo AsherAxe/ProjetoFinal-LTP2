@@ -49,13 +49,13 @@ public class Exclusao {
 					
 						if (verificaChave < 0) {
 						
-							System.out.println("Código de Cliente não pode ser negativo");
+							System.out.println("CÃ³digo de Cliente nÃ£o pode ser negativo");
 						
 						}
 					
 					} catch (NumberFormatException e) {
 						
-						System.out.println("Codigo Inválido ! Apenas números inteiros !");
+						System.out.println("Codigo InvÃ¡lido ! Apenas nÃºmeros inteiros !");
 						
 					}
 				}
@@ -85,7 +85,7 @@ public class Exclusao {
 						
 						if (clienteChave.equals(a.codCliente) && a.ativo == 'S') {
 							
-							System.out.println("Código de Cliente ja cadastrado, digite outro valor\n");
+							System.out.println("CÃ³digo de Cliente ja cadastrado, digite outro valor\n");
 							encontrou = true;
 							break;
 							
@@ -97,7 +97,7 @@ public class Exclusao {
 				} catch (EOFException e) {
 					
 					encontrou = false;
-					System.out.println("Este Codigo de Cliente não foi encontrado no arquivo !\n");
+					System.out.println("Este Codigo de Cliente nÃ£o foi encontrado no arquivo !\n");
 			
 				} catch (IOException e) {
 					
@@ -126,7 +126,7 @@ public class Exclusao {
 			
 			do {
 				
-				System.out.println("\nConfirma a exclusão deste Cliente (S/N) ? ");
+				System.out.println("\nConfirma a exclusÃ£o deste Cliente (S/N) ? ");
 				confirmacao = ler.next().charAt(0);
 				
 				if (confirmacao == 'S') {
@@ -134,7 +134,7 @@ public class Exclusao {
 					try {
 						
 						arquivo = new RandomAccessFile("CLIENTES.DAT", "rw");
-						arquivo.seek(arquivo.length());
+						arquivo.seek(posicaoRegistro);
 						arquivo.writeChar(a.ativo);
 						arquivo.close();
 						
@@ -142,13 +142,13 @@ public class Exclusao {
 						
 					} catch (IOException e) {
 						
-						System.out.println("Erro na gravaçao do registro - programa será finalizado");
+						System.out.println("Erro na gravaÃ§ao do registro - programa serÃ¡ finalizado");
 						System.exit(0);
 						
 					}
 				}
 				
-			} while (confirmacao != 'S' || confirmacao != 'N');
+			} while (confirmacao != 'S' && confirmacao != 'N');
 			
 			ler.nextLine();
 			
