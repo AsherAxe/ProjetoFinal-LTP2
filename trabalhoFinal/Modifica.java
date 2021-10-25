@@ -10,7 +10,7 @@ public class Modifica {
 	public static class Cliente {
 		
 		public char 	ativo;
-		public int		anoPrimeiraCompra;
+		public int	anoPrimeiraCompra;
 		public float 	vlrCompra;
 		public char 	emDia;
 		
@@ -23,7 +23,7 @@ public class Modifica {
 	
 	public static void main(String[] args) {
 		
-		Cliente a 			= new Cliente();
+		Cliente a 		= new Cliente();
 		Scanner ler 		= new Scanner(System.in);
 		RandomAccessFile 	arquivo;
 
@@ -46,8 +46,8 @@ public class Modifica {
 				
 				validaChave = true;
 					
-				System.out.println(" **************** ALTERA«√O DE DADOS DO CLIENTE *****************");
-				System.out.println("Digite o CÛdigo do Cliente ( FIM para encerrar) :");
+				System.out.println(" **************** ALTERA√á√ÉO DE DADOS DO CLIENTE *****************");
+				System.out.println("Digite o C√≥digo do Cliente ( FIM para encerrar) :");
 				
 				clienteChave = ler.nextLine();
 				
@@ -61,7 +61,7 @@ public class Modifica {
 						
 						if (verificaChave < 0) {
 						
-							System.out.println("CÛdigo de Cliente n„o pode ser negativo");
+							System.out.println("C√≥digo de Cliente n√£o pode ser negativo");
 						
 							validaChave = false;
 							
@@ -69,7 +69,7 @@ public class Modifica {
 					
 					} catch (NumberFormatException e) {
 						
-						System.out.println("Codigo Inv·lido ! Apenas n˙meros inteiros !");
+						System.out.println("Codigo Inv√°lido ! Apenas n√∫meros inteiros !");
 						
 						validaChave = false;
 						
@@ -111,7 +111,7 @@ public class Modifica {
 				} catch (EOFException e) {
 					
 					encontrou = false;
-					System.out.println("Este Cliente n„o foi encontrado no arquivo !\n");
+					System.out.println("Este Cliente n√£o foi encontrado no arquivo !\n");
 					
 				} catch (IOException e) {
 					
@@ -157,7 +157,7 @@ public class Modifica {
 						
 						if (a.nomeCliente.length() < 10) {
 							
-							System.out.println("Nome Inv·lido! MÌnimo de 10 caracteres !");
+							System.out.println("Nome Inv√°lido! M√≠nimo de 10 caracteres !");
 						}
 						
 						}while (a.nomeCliente.length() < 10);
@@ -192,7 +192,7 @@ public class Modifica {
 						
 						if (a.vlrCompra < 0) {
 							
-							System.out.println("O valor da primeira compra n„o pode ser negativo !");
+							System.out.println("O valor da primeira compra n√£o pode ser negativo !");
 							System.out.println("Digite novamente! \n");
 							
 						}
@@ -207,7 +207,7 @@ public class Modifica {
 			
 			do {
 				
-				System.out.println("Confirma alteraÁıes (S/N) ? :");
+				System.out.println("Confirma altera√ß√µes (S/N) ? :");
 				
 				confirmacao = ler.next().charAt(0);
 				
