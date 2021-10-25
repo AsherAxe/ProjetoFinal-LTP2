@@ -44,49 +44,53 @@ public class Modifica {
 				
 				do {
 				
-				validaChave = true;
-					
-				System.out.println(" **************** ALTERAÇÃO DE DADOS DO CLIENTE *****************");
-				System.out.println("Digite o Código do Cliente ( FIM para encerrar) :");
-				
-				clienteChave = ler.nextLine();
-				
-				if (!clienteChave.equals("FIM")) {
-					
-					try {
-					
-						verificaChave = Integer.parseInt(clienteChave);
-					
-						validaChave = true;
+					validaChave = true;
 						
-						if (verificaChave < 0) {
+					System.out.println(" **************** ALTERAÇÃO DE DADOS DO CLIENTE *****************");
+					System.out.println("Digite o Código do Cliente ( FIM para encerrar) :");
+					
+					clienteChave = ler.nextLine();
+					
+					if (!clienteChave.equals("FIM")) {
 						
-							System.out.println("Código de Cliente não pode ser negativo");
+						try {
 						
+							verificaChave = Integer.parseInt(clienteChave);
+						
+							validaChave = true;
+							
+							if (verificaChave < 0) {
+							
+								System.out.println("Código de Cliente não pode ser negativo");
+							
+								validaChave = false;
+								
+							}
+						
+						} catch (NumberFormatException e) {
+							
+							System.out.println("Codigo Inválido ! Apenas números inteiros !");
+							
 							validaChave = false;
 							
 						}
+					}
 					
-					} catch (NumberFormatException e) {
+					if (clienteChave.equals("FIM")) {
 						
-						System.out.println("Codigo Inválido ! Apenas números inteiros !");
-						
-						validaChave = false;
+						break;
 						
 					}
-				}
+					
+					encontrou = false;
+					
+				} while (!validaChave);
 				
 				if (clienteChave.equals("FIM")) {
-					
-					validaChave = true;
-					
+										
 					break;
 					
 				}
-				
-				encontrou = false;
-				
-				} while (!validaChave);
 				
 				try {
 					
@@ -107,6 +111,8 @@ public class Modifica {
 							break;
 						}
 					}
+					
+					arquivo.close();
 					
 				} catch (EOFException e) {
 					
@@ -152,7 +158,7 @@ public class Modifica {
 						do {
 						
 						ler.nextLine();
-						System.out.println("Digite o NONO NOME do Cliente.................: ");
+						System.out.println("Digite o NOVO NOME do Cliente.................: ");
 						a.nomeCliente = ler.nextLine();
 						
 						if (a.nomeCliente.length() < 10) {
@@ -161,6 +167,8 @@ public class Modifica {
 						}
 						
 						}while (a.nomeCliente.length() < 10);
+						
+						System.out.println("Novo valor foi processado para a modificação.");
 						
 						break;
 						
@@ -180,6 +188,8 @@ public class Modifica {
 							
 						} while (a.anoPrimeiraCompra > 2013);
 						
+						System.out.println("Novo valor foi processado para a modificação.");
+						
 						break;
 						
 					case 3:
@@ -198,6 +208,10 @@ public class Modifica {
 						}
 						
 						}while (a.vlrCompra < 0);
+						
+						System.out.println("Novo valor foi processado para a modificação.");
+						
+						break;
 						
 				}
 				
