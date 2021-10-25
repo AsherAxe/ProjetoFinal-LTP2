@@ -9,7 +9,7 @@ public class Exclusao {
 	public static class Cliente{
 		
 		public char 	ativo;
-		public int		anoPrimeiraCompra;
+		public int	anoPrimeiraCompra;
 		public float 	vlrCompra;
 		public char 	emDia;
 		
@@ -21,7 +21,7 @@ public class Exclusao {
 	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		
-		Cliente a 			= new Cliente();
+		Cliente a 		= new Cliente();
 		Scanner ler 		= new Scanner(System.in);
 		RandomAccessFile 	arquivo;
 
@@ -77,10 +77,10 @@ public class Exclusao {
 						posicaoRegistro = arquivo.getFilePointer()
 ;						
 						a.ativo 			= arquivo.readChar();
-						a.codCliente 		= arquivo.readUTF();
-						a.nomeCliente 		= arquivo.readUTF();
-						a.anoPrimeiraCompra = arquivo.readInt();
-						a.vlrCompra 		= arquivo.readFloat();
+						a.codCliente 			= arquivo.readUTF();
+						a.nomeCliente 			= arquivo.readUTF();
+						a.anoPrimeiraCompra 		= arquivo.readInt();
+						a.vlrCompra 			= arquivo.readFloat();
 						a.emDia 			= arquivo.readChar();
 						
 						if (clienteChave.equals(a.codCliente) && a.ativo == 'S') {
